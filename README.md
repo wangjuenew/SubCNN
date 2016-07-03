@@ -60,6 +60,8 @@ If you find SubCNN useful in your research, please consider citing:
     # Now follow the Caffe installation instructions here:
     #   http://caffe.berkeleyvision.org/installation.html
 
+    # In the Makefile.config, use CUSTOM_CXX := g++ -std=c++11
+
     # If you're experienced with Caffe and have all of the requirements installed
     # and your Makefile.config in place, then simply do:
     make -j8 && make pycaffe

@@ -14,7 +14,7 @@ else
 end
 
 % output dir
-out_dir = 'detection_train';
+out_dir = 'detection_trainval';
 
 % main loop
 for seq_idx = 1:N
