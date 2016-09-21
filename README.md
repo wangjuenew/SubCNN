@@ -181,7 +181,7 @@ The package also supports running experiments on the PASCAL VOC detection datase
 ### Our trained Models
 You can download our trained models on the KITTI dataset and the PASCAL3D+ dataset (1.7G) from ftp://cs.stanford.edu/cs/cvgl/SubCNN_models.zip
 
-Please check the script test_subcnn_models.sh in SubCNN/fast-rcnn/experiments/scripts for usage of these trained models.
+Please check the script [test_subcnn_models.sh](https://github.com/yuxng/SubCNN/blob/master/fast-rcnn/experiments/scripts/test_subcnn_models.sh) in SubCNN/fast-rcnn/experiments/scripts for usage of these trained models.
 
 
 ### Running with the NTHU dataset (internal usage)
