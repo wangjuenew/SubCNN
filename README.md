@@ -54,7 +54,7 @@ If you find SubCNN useful in your research, please consider citing:
     make
     ```
     
-4. Build our modified Caffe and pycaffe
+4. Build our modified Caffe and pycaffe. Make sure you have cuDNN to save GPU memory.
     ```Shell
     cd $ROOT/caffe-fast-rcnn
     # Now follow the Caffe installation instructions here:
