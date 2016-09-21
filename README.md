@@ -179,7 +179,9 @@ If you find SubCNN useful in your research, please consider citing:
 The package also supports running experiments on the PASCAL VOC detection dataset, the [KITTI Tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php) and the [MOT Tracking dataset](https://motchallenge.net/data/2D_MOT_2015/). Please see the scripts in $ROOT/fast-rcnn/experiments/scripts.
 
 ### Our trained Models
-You can download our trained models on the KITTI dataset and the PASCAL3D+ dataset (1.5G) from ftp://cs.stanford.edu/cs/cvgl/SubCNN_models.zip
+You can download our trained models on the KITTI dataset and the PASCAL3D+ dataset (1.7G) from ftp://cs.stanford.edu/cs/cvgl/SubCNN_models.zip
+
+Please check the script test_subcnn_models.sh in SubCNN/fast-rcnn/experiments/scripts for usage of these trained models.
 
 
 ### Running with the NTHU dataset (internal usage)
