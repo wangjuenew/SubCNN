@@ -185,9 +185,8 @@ If you find SubCNN useful in your research, please consider citing:
     ln -s $ObjectNet3D/Image_sets Image_sets
     ```
 
-3. Write ObjectNet3D annotation to text files
+3. Write ObjectNet3D annotations to text files
     ```Shell
-    # selective search
     cd $ROOT/ObjectNet3D
     write_annotations.m
     cp -r Labels $ROOT/fast-rcnn/data/ObjectNet3D/Labels
@@ -215,10 +214,17 @@ If you find SubCNN useful in your research, please consider citing:
 
 5. Copy the region proposals to $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals:
     ```Shell
-    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/selective_search    # a directory contains region proposals for selective search
-    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/edge_boxes          # a directory contains region proposals for EdgeBoxes
-    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/mcg                 # a directory contains region proposals for MCG
-    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/rpn_vgg16           # a directory contains region proposals for Faster RCNN RPN
+    # a directory contains region proposals for selective search
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/selective_search
+
+    # a directory contains region proposals for EdgeBoxes
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/edge_boxes
+
+    # a directory contains region proposals for MCG
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/mcg
+
+    # a directory contains region proposals for Faster RCNN RPN
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/rpn_vgg16
 
     ```
 
@@ -226,9 +232,16 @@ If you find SubCNN useful in your research, please consider citing:
     ```Shell
     cd $ROOT/fast-rcnn
 
+    # detection and viewpoint estimation with selective search region proposals
     ./experiments/scripts/objectnet3d_vgg16_rcnn_view_selective_search.sh $GPU_ID
+
+    # detection and viewpoint estimation with EdgeBoxes region proposals
     ./experiments/scripts/objectnet3d_vgg16_rcnn_view_edge_boxes.sh $GPU_ID
+
+    # detection and viewpoint estimation with MCG region proposals
     ./experiments/scripts/objectnet3d_vgg16_rcnn_view_mcg.sh $GPU_ID
+
+    # detection and viewpoint estimation with RPN region proposals
     ./experiments/scripts/objectnet3d_vgg16_rcnn_view_rpn.sh $GPU_ID
 
 ### Running with other datasets
