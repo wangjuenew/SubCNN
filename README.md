@@ -192,7 +192,7 @@ If you find SubCNN useful in your research, please consider citing:
     cp -r Labels $ROOT/fast-rcnn/data/ObjectNet3D/Labels
     ```
 
-4. Run the region proposal network or scripts in $ROOT/ObjectNet3D to generate region proposals
+4. Run the region proposal network or scripts in $ROOT/ObjectNet3D to generate region proposals. You may need to download code for selective search, EdgeBoxes or MCG from the web.
     ```Shell
     # selective search
     cd $ROOT/ObjectNet3D
