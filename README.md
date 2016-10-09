@@ -175,6 +175,62 @@ If you find SubCNN useful in your research, please consider citing:
 
     ```
 
+### Running with the ObjectNet3D dataset
+1. Download the ObjectNet3D dataset from [here](http://cvgl.stanford.edu/projects/objectnet3d/).
+
+2. Create symlinks for the ObjectNet3D dataset
+    ```Shell
+    cd $ROOT/fast-rcnn/data/ObjectNet3D
+    ln -s $ObjectNet3D/Images Images
+    ln -s $ObjectNet3D/Image_sets Image_sets
+    ```
+
+3. Write ObjectNet3D annotation to text files
+    ```Shell
+    # selective search
+    cd $ROOT/ObjectNet3D
+    write_annotations.m
+    cp -r Labels $ROOT/fast-rcnn/data/ObjectNet3D/Labels
+    ```
+
+4. Run the region proposal network or scripts in $ROOT/ObjectNet3D to generate region proposals
+    ```Shell
+    # selective search
+    cd $ROOT/ObjectNet3D
+    selective_search_ObjectNet3D.m
+
+    # edgeboxes
+    cd $ROOT/ObjectNet3D
+    edgeboxes_ObjectNet3D.m
+
+    # mcg
+    cd $ROOT/ObjectNet3D
+    mcg_ObjectNet3D.m
+
+    # Faster RCNN RPN
+    cd $ROOT/fast-rcnn
+    ./experiments/scripts/objectnet3d_vgg16_rpn_msr_train.sh $GPU_ID
+
+    ```
+
+5. Copy the region proposals to $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals:
+    ```Shell
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/selective_search    # a directory contains region proposals for selective search
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/edge_boxes          # a directory contains region proposals for EdgeBoxes
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/mcg                 # a directory contains region proposals for MCG
+    $ROOT/fast-rcnn/data/ObjectNet3D/region_proposals/rpn_vgg16           # a directory contains region proposals for Faster RCNN RPN
+
+    ```
+
+6. Run the detection and viewpoint estimation network
+    ```Shell
+    cd $ROOT/fast-rcnn
+
+    ./experiments/scripts/objectnet3d_vgg16_rcnn_view_selective_search.sh $GPU_ID
+    ./experiments/scripts/objectnet3d_vgg16_rcnn_view_edge_boxes.sh $GPU_ID
+    ./experiments/scripts/objectnet3d_vgg16_rcnn_view_mcg.sh $GPU_ID
+    ./experiments/scripts/objectnet3d_vgg16_rcnn_view_rpn.sh $GPU_ID
+
 ### Running with other datasets
 The package also supports running experiments on the PASCAL VOC detection dataset, the [KITTI Tracking dataset](http://www.cvlibs.net/datasets/kitti/eval_tracking.php) and the [MOT Tracking dataset](https://motchallenge.net/data/2D_MOT_2015/). Please see the scripts in $ROOT/fast-rcnn/experiments/scripts.
 

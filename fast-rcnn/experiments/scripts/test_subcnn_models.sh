@@ -9,6 +9,16 @@ LOG="experiments/logs/test_subcnn_models.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
 exec &> >(tee -a "$LOG")
 echo Logging output to "$LOG"
 
+#######################
+# ObjectNet3D test
+#######################
+
+time ./tools/test_net.py --gpu $1 \
+  --def models/VGG16/objectnet3d/test_rcnn_view.prototxt \
+  --net data/SubCNN_models/objectnet3d_trainval/vgg16_fast_rcnn_view_objectnet3d_selective_search_iter_160000.caffemodel \
+  --imdb objectnet3d_test \
+  --cfg experiments/cfgs/objectnet3d_rcnn_view_selective_search.yml
+
 ##################
 # KITTI valiation
 ##################
