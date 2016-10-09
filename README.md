@@ -188,12 +188,14 @@ If you find SubCNN useful in your research, please consider citing:
 3. Write ObjectNet3D annotations to text files
     ```Shell
     cd $ROOT/ObjectNet3D
+    # change the path of ObjectNet3D in globals.m
     write_annotations.m
     cp -r Labels $ROOT/fast-rcnn/data/ObjectNet3D/Labels
     ```
 
 4. Run the region proposal network or scripts in $ROOT/ObjectNet3D to generate region proposals. You may need to download code for selective search, EdgeBoxes or MCG from the web.
     ```Shell
+    # change the path of ObjectNet3D in globals.m
     # selective search
     cd $ROOT/ObjectNet3D
     selective_search_ObjectNet3D.m
