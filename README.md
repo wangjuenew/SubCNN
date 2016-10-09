@@ -6,7 +6,7 @@ Part of this code is based on the [Fast R-CNN](https://github.com/rbgirshick/fas
 
 ### Introduction
 
-We introduce a new region proposal network that uses subcategory information to guide the proposal generating process, and a new detection network for joint detection and subcategory classification. By using subcategories related to object pose, we achieve state-of-the-art performance on both detection and pose estimation on commonly used benchmarks, such as [KITTI](http://www.cvlibs.net/datasets/kitti/eval_object_detail.php?result=5e17cbbabbf775d8cc376793168be49bd6f01608) and PASCAL3D+.
+We introduce a new region proposal network that uses subcategory information to guide the proposal generating process, and a new detection network for joint detection and subcategory classification. By using subcategories related to object pose, we achieve state-of-the-art performance on both detection and pose estimation on commonly used benchmarks, such as [KITTI](http://www.cvlibs.net/datasets/kitti/eval_object_detail.php?result=5e17cbbabbf775d8cc376793168be49bd6f01608), [PASCAL3D+](http://cvgl.stanford.edu/projects/pascal3d.html) and [ObjectNet3D](http://cvgl.stanford.edu/projects/objectnet3d/).
 
 This package supports
  - Subcategory-aware region proposal network
