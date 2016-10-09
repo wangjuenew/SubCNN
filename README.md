@@ -13,7 +13,7 @@ This package supports
  - Subcategory-aware detection network
  - Region proposal network in Faster R-CNN (Ren et al. NIPS 2015)
  - Detection network in Faster R-CNN (Ren et al. NIPS 2015)
- - Experiments on the following datasets: KITTI Detection, PASCAL VOC, PASCAL3D+, KITTI Tracking sequences, MOT sequences
+ - Experiments on the following datasets: KITTI Detection, PASCAL VOC, PASCAL3D+, ObjectNet3D, KITTI Tracking sequences, MOT sequences
 
 ### License
 
