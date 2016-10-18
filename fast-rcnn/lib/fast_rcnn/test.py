@@ -546,7 +546,7 @@ def test_net(net, imdb):
             nms_dets = apply_nms(all_boxes, cfg.TEST.NMS)
             print 'Evaluating detections'
             print imdb.name
-            if not 'imagenet3d' in imdb.name:
+            if not 'objectnet3d' in imdb.name:
                 imdb.evaluate_detections(nms_dets, output_dir)
             imdb.evaluate_detections_one_file(nms_dets, output_dir)
         return
@@ -555,7 +555,7 @@ def test_net(net, imdb):
     num_images = len(imdb.image_index)
     # heuristic: keep an average of 40 detections per class per images prior
     # to NMS
-    if ('voc' in imdb.name or 'pascal' in imdb.name or 'imagenet3d' in imdb.name) and cfg.IS_RPN == False:
+    if ('voc' in imdb.name or 'pascal' in imdb.name or 'objectnet3d' in imdb.name) and cfg.IS_RPN == False:
         max_per_set = 40 * num_images
         max_per_image = 100
     else:
@@ -677,7 +677,7 @@ def test_net(net, imdb):
         print 'Applying NMS to all detections'
         nms_dets = apply_nms(all_boxes, cfg.TEST.NMS)
         print 'Evaluating detections'
-        if not 'imagenet3d' in imdb.name:
+        if not 'objectnet3d' in imdb.name:
             imdb.evaluate_detections(nms_dets, output_dir)
         imdb.evaluate_detections_one_file(nms_dets, output_dir)
 
